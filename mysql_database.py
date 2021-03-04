@@ -1,59 +1,63 @@
-import mysql.connector
-from datetime import datetime, date
+from datetime import date
+from database import db, cursor
 
-def insert_transaction(db,myCursor, values):
-    id = 0
-    Q3 = f"select personID from Client where name='{values[0]}'"
-    myCursor.execute(Q3)
-    for x in myCursor:
-        id = x[0]
-    Q4 = f"insert into Transactions (userId,product,purchase_value,sale_value,sale_date,quantity,payment_method) " \
-         f"VALUES ({id},'{values[1]}','{values[2]}','{values[3]}','{values[4]}','{values[5]}') "
-    myCursor.execute(Q4)
-    db.commit()
+'''
+CREATE_CLIENTS = "CREATE TABLE Clients (`clientId` INT NOT NULL AUTO_INCREMENT,`name` VARCHAR(50),`phone` INT,`address` VARCHAR(30),`company` VARCHAR(30),PRIMARY KEY (`clientId`)) "
+CREATE_TRIPS = "CREATE TABLE Trips (`tripId` int AUTO_INCREMENT,`start_trip` DATE,`end_trip` DATE,`active` BOOLEAN,`total_cost` FLOAT,`clean_profit` FLOAT,`dirty_profit` FLOAT,`origin` VARCHAR(50),`destiny` VARCHAR(50),PRIMARY KEY (tripId))"
+CREATE_TRANSACTIONS = "CREATE TABLE `Transactions` (`transactionId` INT AUTO_INCREMENT,`product` VARCHAR(100),`purchase_value` FLOAT,`sale_value` FLOAT,`sale_date` DATE,`quantity` INT,`payment_method` VARCHAR(30),`clientId` INT,tripId INT,PRIMARY KEY (transactionId),FOREIGN KEY (clientId) REFERENCES Clients (clientId),FOREIGN KEY (tripId) REFERENCES Trips (tripId)) "
+CREATE_COSTS = "CREATE TABLE Costs (`costId` int AUTO_INCREMENT,`type` VARCHAR(30),`description` VARCHAR(100),`tripId` INT NOT NULL,PRIMARY KEY (costId),FOREIGN KEY(tripId) REFERENCES Trips(tripId))"
+'''
 
-    for x in myCursor:
-        print(x)
 
-def insert_client(db,myCursor,values):
-    Query_insert = "INSERT INTO Client (name,phone,address,company) VALUES (%s,%s,%s,%s)",(values[0],values[1],values[2],values[3])
+class Database:
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="lucca2021",
-    database='testdatabase'
-)
+    def get_active_trip(self):
+        cursor.execute("SELECT tripId FROM Trips WHERE active=1")
+        for trip in cursor:
+            return trip[0]
 
-myCursor = db.cursor()
-# myCursor.execute("INSERT INTO Client (name,phone,address,company) VALUES (%s,%s,%s,%s) ", ('Enrico', 912837123, 'SP', 'ScalaSystems'))
-# myCursor.execute("CREATE TABLE 'Client' ('name' VARCHAR(50),'phone' INT,'address' VARCHAR(30),'company' VARCHAR(30),'personID' INT NOT NULL AUTO_INCREMENT,PRIMARY KEY ('personID'));")
+    def get_client(self, name):
+        cursor.execute(f"SELECT clientId FROM Clients WHERE name='{name}'")
+        for client in cursor:
+            return client[0]
 
-# myCursor.execute("CREATE TABLE Test (name VARCHAR(50), created datetime)")
-# myCursor.execute("INSERT INTO Test (name,created,date) VALUES (%s,%s,%s)",("Lucca",datetime.now(),date.today()))
-# myCursor.execute("ALTER TABLE Test DROP COLUMN created")
-# db.commit()
+    def start_trip(self, trip_values):
+        cursor.execute("INSERT INTO Trips (start_trip,end_trip,active,total_cost,clean_profit,dirty_profit,origin,"
+                       "destiny) VALUES %s" % (trip_values,))
+        db.commit()
+
+    def insert_transaction(self, name, transaction_values, from_trip):
+        transaction_values.append(self.get_client(name))
+        if from_trip:
+            transaction_values.append(self.get_active_trip())
+            cursor.execute("INSERT INTO Transactions (product,purchase_value,sale_value,sale_date,quantity,"
+                           "payment_method,clientId,tripId) VALUES %s" % (transaction_values,))
+        else:
+            cursor.execute("INSERT INTO Transactions (product,purchase_value,sale_value,sale_date,quantity,"
+                           "payment_method,clientId) VALUES %s" % (transaction_values,))
+        db.commit()
+
+    def insert_client(self, client_values):
+        cursor.execute("INSERT INTO Clients (name,phone,address,company) VALUES %s" % (client_values,))
+        db.commit()
+
+    def insert_cost(self, cost_values):
+        cost_values.append(self.get_active_trip())
+        cursor.execute("INSERT INTO Costs (type,description,tripId) VALUES %s" % (cost_values,))
+        db.commit()
+
+
+# if __name__ == '__main__':
+#     values = ['Enrico', 'Palmito', '10.5', '15.5', date.today(), '10', 'Dinheiro']
+#     # values = ("Enrico",53981312377,"Pelotas","Centauro")
+#     # myCursor.execute(insert_client(values))
+#     # db.commit()
+#     insert_transaction(values)
+#     cursor.execute("SELECT * FROM Clients")
 #
-# myCursor.execute("SELECT * FROM Test")
-
-
-Q1 = "CREATE TABLE Client ('name' VARCHAR(50),'phone' INT,'address' VARCHAR(30),'company' VARCHAR(30),'personID' INT " \
-     "NOT NULL AUTO_INCREMENT,PRIMARY KEY ('personID') "
-Q2 = "CREATE TABLE `Transactions` (`userId` INT,`product` VARCHAR(100),`purchase_value` DECIMAL,`sale_value` DECIMAL," \
-     "`sale_date` DATE,`quantity` INT,`payment_method` VARCHAR(30),PRIMARY KEY (userId),FOREIGN KEY (userId) " \
-     "REFERENCES Client (personID)); "
-
-Q3 = "select * from Transactions"
-
-Q4 = "CREATE TABLE Trips ('tripId' int AUTO_INCREMENT, 'start_trip DATE','end_trip DATE','active', PRIMARY KEY (tripId))"
-
-values = ['Enrico', 'Palmito','10.5','15.5',date.today(),'10','Dinheiro']
-insert_transaction(db,myCursor,values)
-myCursor.execute(Q3)
-
-
-for x in myCursor:
-    print(x[0])
-
-
-
+#     List = []
+#     for x in cursor:
+#         print(x)
+#         List.append(x)
+#
+#     print(f"Lista: {List}")
