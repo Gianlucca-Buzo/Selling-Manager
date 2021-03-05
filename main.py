@@ -11,12 +11,12 @@ class MyWindow(QMainWindow):
     def __init__(self):
         super(MyWindow, self).__init__()
 
+        self.label = QtWidgets.QLabel(self)
         self.setGeometry(200, 200, 300, 300)
         self.setWindowTitle("Main Window")
         self.initUi()
 
     def initUi(self):
-        self.label = QtWidgets.QLabel(self)
         self.label.setText("Im a label")
         self.label.move(50, 50)
 
