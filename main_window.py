@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.label_7 = QtWidgets.QLabel(self.tab_3)
         self.label_6 = QtWidgets.QLabel(self.tab_3)
         self.comboBox = QtWidgets.QComboBox(self.tab_3)
-        clientes = ['Enrico', 'Lucca', 'Isabela']
+        clientes = db.get_clients_list()
         self.comboBox.addItems(clientes)
         self.lineEdit_5 = QtWidgets.QLineEdit(self.tab_2)
         self.label_5 = QtWidgets.QLabel(self.tab_2)
@@ -92,6 +92,8 @@ class Ui_MainWindow(object):
         self.lineEdit = QtWidgets.QLineEdit(self.tab_2)
         self.tableWidget = QtWidgets.QTableWidget(self.tab)
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.start_trip_button = QtWidgets.QPushButton(self.tab_6)
+        self.finish_trip_button = QtWidgets.QPushButton(self.tab_6)
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -257,6 +259,17 @@ class Ui_MainWindow(object):
         self.label_18.setGeometry(QtCore.QRect(20, 240, 91, 17))
         self.label_18.setObjectName("label_18")
 
+        self.start_trip_button.setGeometry(QtCore.QRect(470, 50, 191, 61))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.start_trip_button.setFont(font)
+        self.start_trip_button.setObjectName("start_trip_button")
+        self.start_trip_button.clicked.connect(self.start_trip)
+        self.finish_trip_button.setGeometry(QtCore.QRect(470, 240, 191, 61))
+        self.finish_trip_button.setFont(font)
+        self.finish_trip_button.setObjectName("finish_trip_button")
+        self.finish_trip_button.clicked.connect(self.finish_trip)
+
         # Trip's Sales
         self.label_37.setGeometry(QtCore.QRect(30, 20, 67, 17))
         self.label_37.setObjectName("label_37")
@@ -362,6 +375,8 @@ class Ui_MainWindow(object):
         self.label_107.setText(_translate("MainWindow", "Data de pagamento"))
         self.label_132.setText(_translate("MainWindow", "Quantidade "))
         self.pushButton_25.setText(_translate("MainWindow", "Submit"))
+        self.start_trip_button.setText(_translate("MainWindow", "Começar Viagem"))
+        self.finish_trip_button.setText(_translate("MainWindow", "Finalizar Viagem"))
         self.label_133.setText(_translate("MainWindow", "Forma de pagamento"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_7), _translate("MainWindow", "Vendas"))
         self.label_134.setText(_translate("MainWindow", "Tipo"))
@@ -396,12 +411,20 @@ class Ui_MainWindow(object):
         self.lineEdit_3.clear()
         self.lineEdit_4.clear()
         self.lineEdit_5.clear()
+        self.comboBox.clear()
+        self.comboBox.addItems(db.get_clients_list())
 
     def transactionForms(self):
         sale_date = self.lineEdit_10.text().split("/")
         sale_date = date(int(sale_date[2]),int(sale_date[1]),int(sale_date[0]))
+
         db.insert_transaction(self.comboBox.currentText(), [self.comboBox_2.currentText(), float(self.lineEdit_6.text()), float(self.lineEdit_7.text()), sale_date.__str__(), int(self.lineEdit_11.text()), self.comboBox_3.currentText(),self.comboBox_4.currentText()], 0)
 
+    def start_trip(self):
+        pass
+
+    def finish_trip(self):
+        pass
 
 if __name__ == "__main__":
     import sys

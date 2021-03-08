@@ -521,7 +521,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
+        <y>10</y>
         <width>711</width>
         <height>411</height>
        </rect>
@@ -554,6 +554,42 @@
         </property>
         <property name="text">
          <string>Custo Geral:</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="start_trip_button">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>50</y>
+          <width>191</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Começar Viagem</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="finish_trip_button">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>240</y>
+          <width>191</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Finalizar Viagem</string>
         </property>
        </widget>
       </widget>
@@ -887,6 +923,46 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>lineEdit_5</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>lineEdit_8</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>comboBox_4</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>lineEdit_6</tabstop>
+  <tabstop>lineEdit_7</tabstop>
+  <tabstop>lineEdit_10</tabstop>
+  <tabstop>lineEdit_11</tabstop>
+  <tabstop>comboBox_3</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>lineEdit_9</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>tableView</tabstop>
+  <tabstop>comboBox_9</tabstop>
+  <tabstop>comboBox_10</tabstop>
+  <tabstop>comboBox_11</tabstop>
+  <tabstop>lineEdit_45</tabstop>
+  <tabstop>lineEdit_46</tabstop>
+  <tabstop>lineEdit_60</tabstop>
+  <tabstop>lineEdit_75</tabstop>
+  <tabstop>comboBox_40</tabstop>
+  <tabstop>pushButton_25</tabstop>
+  <tabstop>pushButton_26</tabstop>
+  <tabstop>comboBox_41</tabstop>
+  <tabstop>lineEdit_76</tabstop>
+  <tabstop>lineEdit_77</tabstop>
+  <tabstop>start_trip_button</tabstop>
+  <tabstop>finish_trip_button</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

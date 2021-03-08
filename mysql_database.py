@@ -11,6 +11,11 @@ CREATE_COSTS = "CREATE TABLE Costs (`costId` int AUTO_INCREMENT,`type` VARCHAR(3
 
 class Database:
 
+    def verify_cursor(self,cursor):
+        for x in cursor:
+            return True
+        return False
+
     def get_active_trip(self):
         cursor.execute("SELECT tripId FROM Trips WHERE active=1")
         for trip in cursor:
@@ -22,9 +27,53 @@ class Database:
             return client[0]
 
     def start_trip(self, trip_values):
-        cursor.execute("INSERT INTO Trips (start_trip,end_trip,active,total_cost,clean_profit,dirty_profit,origin,"
-                       "destiny) VALUES %s" % (trip_values,))
-        db.commit()
+        if not self.exists_active_trip():
+            cursor.execute("INSERT INTO Trips (start_trip,end_trip,active,total_cost,clean_profit,dirty_profit,origin,"
+                           "destiny) VALUES %s" % (trip_values,))
+            db.commit()
+            return True
+        else:
+            return False
+
+    def end_trip(self,end_trip_date):
+        costs_value = self.get_total_cost()
+        dirty_profit = self.get_trip_dirty_profit()
+        purchase_total_value = self.get_transactions_purchase_value()
+        if self.exists_active_trip():
+            cursor.execute("UPDATE Trip SET active='0', end_trip='%s',total_cost='%s','dirty_profit='%s',"
+                           "clean_profit='%s' where active='1'" % (end_trip_date, costs_value, dirty_profit, 
+                                                                   dirty_profit-(costs_value + purchase_total_value)))
+            db.commit()
+            return True
+        else:
+            return False
+
+    def get_trip_id(self):
+        cursor.execute("SELECT tripId FROM Trips WHERE active='1'")
+        for x in cursor:
+            return int(x[0])
+
+    def get_transactions_purchase_value(self):
+        cursor.execute("SELECT purchase_value FROM Transactions WHERE tripId='%s'" % (self.get_trip_id(),))
+        return self.sum_float_result(cursor)
+
+    def get_trip_dirty_profit(self):
+        cursor.execute("SELECT sale_value FROM Transactions WHERE tripId='%s'" % (self.get_trip_id(),))
+        return self.sum_float_result(cursor)
+
+    def get_total_cost(self):
+        cursor.execute("SELECT value FROM Costs WHERE tripId='%s'" %(self.get_trip_id(),))
+        return self.sum_float_result(cursor)
+
+    def sum_float_result(self,cursor):
+        total = 0.0
+        for x in cursor:
+            total += float(x[0])
+        return total
+
+    def exists_active_trip(self):
+        cursor.execute("SELECT tripId FROM Trips WHERE active='1'")
+        return self.verify_cursor(cursor)
 
     def insert_transaction(self, name, transaction_values, from_trip):
         transaction_values.append(int(self.get_client(name)))
@@ -49,14 +98,21 @@ class Database:
 
     def exists_client(self, name):
         cursor.execute("SELECT clientId FROM Clients WHERE name = '%s' " % (name,))
-        for x in cursor:
-            return True
-        return False
+        return self.verify_cursor(cursor)
 
     def insert_cost(self, cost_values):
         cost_values.append(self.get_active_trip())
         cursor.execute("INSERT INTO Costs (type,description,tripId) VALUES %s" % (cost_values,))
         db.commit()
+
+    def get_clients_list(self):
+        list = [""]
+        cursor.execute("SELECT name FROM Clients")
+        for x in cursor:
+            list.append(str(x[0]))
+        return list
+
+
 
 # if __name__ == '__main__':
 #     values = ['Enrico', 'Palmito', '10.5', '15.5', date.today(), '10', 'Dinheiro']
