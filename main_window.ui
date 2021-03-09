@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>900</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTabWidget" name="main_tabs">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>0</y>
+      <x>60</x>
+      <y>20</y>
       <width>771</width>
       <height>491</height>
      </rect>
@@ -26,11 +26,11 @@
     <property name="currentIndex">
      <number>4</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="general_vision">
      <attribute name="title">
       <string>Visão Geral</string>
      </attribute>
-     <widget class="QTableWidget" name="tableWidget">
+     <widget class="QTableWidget" name="table_vision_clients">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -46,11 +46,11 @@
       </column>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="tab_clients">
      <attribute name="title">
       <string>Clientes</string>
      </attribute>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="input_clients_name">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -60,7 +60,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="label_clients_name">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -73,7 +73,7 @@
        <string>Nome</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label_clients_phone">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -86,7 +86,7 @@
        <string>Telefone</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_clients_address">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -99,7 +99,7 @@
        <string>Endereço</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="label_clients_company">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -112,7 +112,7 @@
        <string>Empresa</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="input_clients_phone">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -122,7 +122,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_3">
+     <widget class="QLineEdit" name="input_clients_address">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -132,7 +132,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="input_clients_company">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -142,7 +142,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="label_clients_email">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -155,7 +155,7 @@
        <string>Email</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
+     <widget class="QLineEdit" name="input_clients_email">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -165,25 +165,25 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="button_clients_add">
       <property name="geometry">
        <rect>
         <x>190</x>
         <y>290</y>
-        <width>150</width>
-        <height>50</height>
+        <width>171</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="text">
-       <string>Submit</string>
+       <string>Adicionar Cliente</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_3">
+    <widget class="QWidget" name="tab_transactions">
      <attribute name="title">
       <string>Transações</string>
      </attribute>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="box_transac_client">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -193,7 +193,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="label_transac_client">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -206,7 +206,7 @@
        <string>Cliente</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="label_transac_product">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -219,7 +219,7 @@
        <string>Produto</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="box_transac_product">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -229,7 +229,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
+     <widget class="QLineEdit" name="input_transac_purchase">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -239,7 +239,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_7">
+     <widget class="QLineEdit" name="input_transac_sale">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -249,7 +249,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_10">
+     <widget class="QLineEdit" name="input_transac_pay_day">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -259,7 +259,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_11">
+     <widget class="QLineEdit" name="input_transac_quantity">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -269,7 +269,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="label_transac_purchase">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -282,7 +282,7 @@
        <string>Valor de Compra</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="label_transac_sale">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -295,7 +295,7 @@
        <string>Valor de Venda</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QLabel" name="label_transac_pay_day">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -308,7 +308,7 @@
        <string>Data de pagamento</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QLabel" name="label_transac_quantity">
       <property name="geometry">
        <rect>
         <x>40</x>
@@ -321,7 +321,7 @@
        <string>Quantidade </string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_13">
+     <widget class="QLabel" name="label_transac_payment">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -334,7 +334,7 @@
        <string>Forma de pagamento</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_3">
+     <widget class="QComboBox" name="box_transac_payment">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -344,20 +344,20 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="button_transac_add">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>370</y>
-        <width>89</width>
-        <height>25</height>
+        <x>320</x>
+        <y>350</y>
+        <width>161</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
-       <string>Submit</string>
+       <string>Adicionar Transação</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="label_transac_type">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -370,7 +370,7 @@
        <string>Tipo</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_4">
+     <widget class="QComboBox" name="box_transact_type">
       <property name="geometry">
        <rect>
         <x>320</x>
@@ -381,11 +381,11 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_4">
+    <widget class="QWidget" name="tab_products">
      <attribute name="title">
       <string>Produtos</string>
      </attribute>
-     <widget class="QLabel" name="label_14">
+     <widget class="QLabel" name="label_products_add">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -403,7 +403,7 @@
        <string>Adicionar Produto</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_15">
+     <widget class="QLabel" name="label_products_remove">
       <property name="geometry">
        <rect>
         <x>450</x>
@@ -440,7 +440,7 @@
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_16">
+     <widget class="QLabel" name="label_products_add_name">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -453,7 +453,7 @@
        <string>Nome</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_8">
+     <widget class="QLineEdit" name="input_products_add_name">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -463,33 +463,33 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="button_products_add">
       <property name="geometry">
        <rect>
         <x>90</x>
         <y>200</y>
-        <width>89</width>
-        <height>25</height>
+        <width>151</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Submit</string>
+       <string>Adicionar </string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="button_products_remove">
       <property name="geometry">
        <rect>
         <x>490</x>
         <y>200</y>
-        <width>89</width>
-        <height>25</height>
+        <width>151</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
        <string>Remover</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_17">
+     <widget class="QLabel" name="label_products_remove_name">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -502,7 +502,7 @@
        <string>Nome</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_9">
+     <widget class="QLineEdit" name="input_products_remove_name">
       <property name="geometry">
        <rect>
         <x>470</x>
@@ -513,11 +513,11 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_5">
+    <widget class="QWidget" name="tab_trips">
      <attribute name="title">
       <string>Viagem</string>
      </attribute>
-     <widget class="QTabWidget" name="tabWidget_2">
+     <widget class="QTabWidget" name="trips_tabs">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -527,13 +527,13 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_6">
+      <widget class="QWidget" name="tr_general_vision_tab">
        <attribute name="title">
         <string>Visão da Viagem</string>
        </attribute>
-       <widget class="QTableView" name="tableView">
+       <widget class="QTableView" name="tr_table_general_view">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -543,7 +543,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_18">
+       <widget class="QLabel" name="tr_label_general_cost">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -556,7 +556,7 @@
          <string>Custo Geral:</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="start_trip_button">
+       <widget class="QPushButton" name="tr_start_trip_button">
         <property name="geometry">
          <rect>
           <x>470</x>
@@ -574,7 +574,7 @@
          <string>Começar Viagem</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="finish_trip_button">
+       <widget class="QPushButton" name="tr_finish_trip_button">
         <property name="geometry">
          <rect>
           <x>470</x>
@@ -593,11 +593,11 @@
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_7">
+      <widget class="QWidget" name="tr_sales_tab">
        <attribute name="title">
         <string>Vendas</string>
        </attribute>
-       <widget class="QLabel" name="label_37">
+       <widget class="QLabel" name="tr_label_sale_client">
         <property name="geometry">
          <rect>
           <x>30</x>
@@ -610,7 +610,7 @@
          <string>Cliente</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_9">
+       <widget class="QComboBox" name="tr_box_sale_client">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -620,7 +620,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_10">
+       <widget class="QComboBox" name="tr_box_sale_product">
         <property name="geometry">
          <rect>
           <x>120</x>
@@ -630,7 +630,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_38">
+       <widget class="QLabel" name="tr_label_sale_product">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -643,7 +643,7 @@
          <string>Produto</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_11">
+       <widget class="QComboBox" name="tr_box_sale_type">
         <property name="geometry">
          <rect>
           <x>280</x>
@@ -653,7 +653,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_39">
+       <widget class="QLabel" name="tr_label_sale_type">
         <property name="geometry">
          <rect>
           <x>240</x>
@@ -666,7 +666,7 @@
          <string>Tipo</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_45">
+       <widget class="QLineEdit" name="tr_input_sale_purchase">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -676,7 +676,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_82">
+       <widget class="QLabel" name="tr_label_sale_purchase">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -689,7 +689,7 @@
          <string>Valor de Compra</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_46">
+       <widget class="QLineEdit" name="tr_input_sale_value">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -699,7 +699,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_83">
+       <widget class="QLabel" name="tr_label_sale_value">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -712,7 +712,7 @@
          <string>Valor de Venda</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_60">
+       <widget class="QLineEdit" name="tr_input_sale_pay_day">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -722,7 +722,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_107">
+       <widget class="QLabel" name="tr_label_sale_pay_day">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -735,7 +735,7 @@
          <string>Data de pagamento</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_132">
+       <widget class="QLabel" name="tr_label_sale_quantity">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -748,7 +748,7 @@
          <string>Quantidade </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_75">
+       <widget class="QLineEdit" name="tr_input_sale_quantity">
         <property name="geometry">
          <rect>
           <x>180</x>
@@ -758,7 +758,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_40">
+       <widget class="QComboBox" name="tr_box_sale_payment">
         <property name="geometry">
          <rect>
           <x>160</x>
@@ -771,17 +771,17 @@
        <widget class="QPushButton" name="pushButton_25">
         <property name="geometry">
          <rect>
-          <x>160</x>
-          <y>340</y>
-          <width>89</width>
-          <height>25</height>
+          <x>320</x>
+          <y>290</y>
+          <width>171</width>
+          <height>51</height>
          </rect>
         </property>
         <property name="text">
-         <string>Submit</string>
+         <string>Adicionar Venda</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_133">
+       <widget class="QLabel" name="tr_label_sale_payment">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -795,11 +795,11 @@
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_8">
+      <widget class="QWidget" name="tr_cost_tab">
        <attribute name="title">
         <string>Custo</string>
        </attribute>
-       <widget class="QLabel" name="label_134">
+       <widget class="QLabel" name="tr_label_cost_type">
         <property name="geometry">
          <rect>
           <x>40</x>
@@ -815,17 +815,17 @@
        <widget class="QPushButton" name="pushButton_26">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>230</y>
-          <width>89</width>
-          <height>25</height>
+          <x>170</x>
+          <y>220</y>
+          <width>171</width>
+          <height>61</height>
          </rect>
         </property>
         <property name="text">
-         <string>Submit</string>
+         <string>Adicionar Custo</string>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_41">
+       <widget class="QComboBox" name="tr_box_cost_type">
         <property name="geometry">
          <rect>
           <x>170</x>
@@ -860,7 +860,7 @@
          </property>
         </item>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_76">
+       <widget class="QLineEdit" name="tr_input_cost_value">
         <property name="geometry">
          <rect>
           <x>170</x>
@@ -870,7 +870,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_135">
+       <widget class="QLabel" name="tr_label_cost_value">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -883,7 +883,7 @@
          <string>Valor do Custo</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_136">
+       <widget class="QLabel" name="tr_label_cost_description">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -896,7 +896,7 @@
          <string>Descrição (Opcional)</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_77">
+       <widget class="QLineEdit" name="tr_input_cost_description">
         <property name="geometry">
          <rect>
           <x>170</x>
@@ -911,57 +911,47 @@
     </widget>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <tabstops>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>lineEdit_3</tabstop>
-  <tabstop>lineEdit_4</tabstop>
-  <tabstop>lineEdit_5</tabstop>
-  <tabstop>pushButton</tabstop>
-  <tabstop>tableWidget</tabstop>
-  <tabstop>lineEdit_8</tabstop>
-  <tabstop>pushButton_3</tabstop>
-  <tabstop>comboBox_4</tabstop>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>comboBox</tabstop>
-  <tabstop>comboBox_2</tabstop>
-  <tabstop>lineEdit_6</tabstop>
-  <tabstop>lineEdit_7</tabstop>
-  <tabstop>lineEdit_10</tabstop>
-  <tabstop>lineEdit_11</tabstop>
-  <tabstop>comboBox_3</tabstop>
-  <tabstop>pushButton_2</tabstop>
-  <tabstop>pushButton_4</tabstop>
-  <tabstop>lineEdit_9</tabstop>
-  <tabstop>tabWidget_2</tabstop>
-  <tabstop>tableView</tabstop>
-  <tabstop>comboBox_9</tabstop>
-  <tabstop>comboBox_10</tabstop>
-  <tabstop>comboBox_11</tabstop>
-  <tabstop>lineEdit_45</tabstop>
-  <tabstop>lineEdit_46</tabstop>
-  <tabstop>lineEdit_60</tabstop>
-  <tabstop>lineEdit_75</tabstop>
-  <tabstop>comboBox_40</tabstop>
+  <tabstop>input_clients_name</tabstop>
+  <tabstop>input_clients_phone</tabstop>
+  <tabstop>input_clients_address</tabstop>
+  <tabstop>input_clients_company</tabstop>
+  <tabstop>input_clients_email</tabstop>
+  <tabstop>button_clients_add</tabstop>
+  <tabstop>table_vision_clients</tabstop>
+  <tabstop>input_products_add_name</tabstop>
+  <tabstop>button_products_add</tabstop>
+  <tabstop>box_transact_type</tabstop>
+  <tabstop>main_tabs</tabstop>
+  <tabstop>box_transac_client</tabstop>
+  <tabstop>box_transac_product</tabstop>
+  <tabstop>input_transac_purchase</tabstop>
+  <tabstop>input_transac_sale</tabstop>
+  <tabstop>input_transac_pay_day</tabstop>
+  <tabstop>input_transac_quantity</tabstop>
+  <tabstop>box_transac_payment</tabstop>
+  <tabstop>button_transac_add</tabstop>
+  <tabstop>button_products_remove</tabstop>
+  <tabstop>input_products_remove_name</tabstop>
+  <tabstop>trips_tabs</tabstop>
+  <tabstop>tr_table_general_view</tabstop>
+  <tabstop>tr_box_sale_client</tabstop>
+  <tabstop>tr_box_sale_product</tabstop>
+  <tabstop>tr_box_sale_type</tabstop>
+  <tabstop>tr_input_sale_purchase</tabstop>
+  <tabstop>tr_input_sale_value</tabstop>
+  <tabstop>tr_input_sale_pay_day</tabstop>
+  <tabstop>tr_input_sale_quantity</tabstop>
+  <tabstop>tr_box_sale_payment</tabstop>
   <tabstop>pushButton_25</tabstop>
   <tabstop>pushButton_26</tabstop>
-  <tabstop>comboBox_41</tabstop>
-  <tabstop>lineEdit_76</tabstop>
-  <tabstop>lineEdit_77</tabstop>
-  <tabstop>start_trip_button</tabstop>
-  <tabstop>finish_trip_button</tabstop>
+  <tabstop>tr_box_cost_type</tabstop>
+  <tabstop>tr_input_cost_value</tabstop>
+  <tabstop>tr_input_cost_description</tabstop>
+  <tabstop>tr_start_trip_button</tabstop>
+  <tabstop>tr_finish_trip_button</tabstop>
  </tabstops>
  <resources/>
  <connections/>

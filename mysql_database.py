@@ -28,7 +28,7 @@ class Database:
 
     def start_trip(self, trip_values):
         if not self.exists_active_trip():
-            cursor.execute("INSERT INTO Trips (start_trip,end_trip,active,total_cost,clean_profit,dirty_profit,origin,"
+            cursor.execute("INSERT INTO Trips (start_trip,active,total_cost,clean_profit,dirty_profit,origin,"
                            "destiny) VALUES %s" % (trip_values,))
             db.commit()
             return True
@@ -40,9 +40,9 @@ class Database:
         dirty_profit = self.get_trip_dirty_profit()
         purchase_total_value = self.get_transactions_purchase_value()
         if self.exists_active_trip():
-            cursor.execute("UPDATE Trip SET active='0', end_trip='%s',total_cost='%s','dirty_profit='%s',"
-                           "clean_profit='%s' where active='1'" % (end_trip_date, costs_value, dirty_profit, 
-                                                                   dirty_profit-(costs_value + purchase_total_value)))
+            cursor.execute("UPDATE Trips SET end_trip='%s',dirty_profit='%s',total_cost='%s',clean_profit='%s',"
+                           "active='0' WHERE active='1';" % (end_trip_date, dirty_profit, costs_value, dirty_profit -
+                                                             (costs_value + purchase_total_value)))
             db.commit()
             return True
         else:
