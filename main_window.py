@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
         self.label_7 = QtWidgets.QLabel(self.tab_3)
         self.label_6 = QtWidgets.QLabel(self.tab_3)
         self.comboBox = QtWidgets.QComboBox(self.tab_3)
-        clientes = db.get_clients_list()
+        clientes = get_clients_list()
         self.comboBox.addItems(clientes)
         self.lineEdit_5 = QtWidgets.QLineEdit(self.tab_2)
         self.label_5 = QtWidgets.QLabel(self.tab_2)
@@ -392,7 +392,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), _translate("MainWindow", "Viagem"))
 
     def clientForms(self):
-        if db.insert_client((self.lineEdit.text(), self.lineEdit_2.text(), self.lineEdit_3.text(), self.lineEdit_4.text(), self.lineEdit_5.text())):
+        if insert_client((self.lineEdit.text(), self.lineEdit_2.text(), self.lineEdit_3.text(), self.lineEdit_4.text(), self.lineEdit_5.text())):
             success_message = QtWidgets.QMessageBox()
             success_message.setIcon(QtWidgets.QMessageBox.Information)
             success_message.setText("Cliente criado com sucesso!")
@@ -412,13 +412,13 @@ class Ui_MainWindow(object):
         self.lineEdit_4.clear()
         self.lineEdit_5.clear()
         self.comboBox.clear()
-        self.comboBox.addItems(db.get_clients_list())
+        self.comboBox.addItems(get_clients_list())
 
     def transactionForms(self):
         sale_date = self.lineEdit_10.text().split("/")
         sale_date = date(int(sale_date[2]),int(sale_date[1]),int(sale_date[0]))
 
-        db.insert_transaction(self.comboBox.currentText(), [self.comboBox_2.currentText(), float(self.lineEdit_6.text()), float(self.lineEdit_7.text()), sale_date.__str__(), int(self.lineEdit_11.text()), self.comboBox_3.currentText(),self.comboBox_4.currentText()], 0)
+        insert_transaction(self.comboBox.currentText(), [self.comboBox_2.currentText(), float(self.lineEdit_6.text()), float(self.lineEdit_7.text()), sale_date.__str__(), int(self.lineEdit_11.text()), self.comboBox_3.currentText(),self.comboBox_4.currentText()], 0)
 
     def start_trip(self):
         pass
