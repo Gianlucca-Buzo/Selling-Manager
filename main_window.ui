@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>900</width>
+    <width>894</width>
     <height>550</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="general_vision">
      <attribute name="title">
@@ -343,6 +343,21 @@
         <height>25</height>
        </rect>
       </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dinheiro</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cheque</string>
+       </property>
+      </item>
      </widget>
      <widget class="QPushButton" name="button_transac_add">
       <property name="geometry">
@@ -370,145 +385,13 @@
        <string>Tipo</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="box_transact_type">
+     <widget class="QComboBox" name="box_transac_type">
       <property name="geometry">
        <rect>
         <x>320</x>
         <y>110</y>
         <width>86</width>
         <height>25</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_products">
-     <attribute name="title">
-      <string>Produtos</string>
-     </attribute>
-     <widget class="QLabel" name="label_products_add">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>20</y>
-        <width>211</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Adicionar Produto</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_products_remove">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>20</y>
-        <width>211</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Remover Produto</string>
-      </property>
-     </widget>
-     <widget class="Line" name="line">
-      <property name="geometry">
-       <rect>
-        <x>360</x>
-        <y>60</y>
-        <width>20</width>
-        <height>331</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_products_add_name">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>130</y>
-        <width>51</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Nome</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="input_products_add_name">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>130</y>
-        <width>211</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="button_products_add">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>200</y>
-        <width>151</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Adicionar </string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="button_products_remove">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>200</y>
-        <width>151</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Remover</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_products_remove_name">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>130</y>
-        <width>51</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Nome</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="input_products_remove_name">
-      <property name="geometry">
-       <rect>
-        <x>470</x>
-        <y>130</y>
-        <width>211</width>
-        <height>21</height>
        </rect>
       </property>
      </widget>
@@ -527,7 +410,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tr_general_vision_tab">
        <attribute name="title">
@@ -767,19 +650,21 @@
           <height>25</height>
          </rect>
         </property>
-       </widget>
-       <widget class="QPushButton" name="pushButton_25">
-        <property name="geometry">
-         <rect>
-          <x>320</x>
-          <y>290</y>
-          <width>171</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Adicionar Venda</string>
-        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dinheiro</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cheque</string>
+         </property>
+        </item>
        </widget>
        <widget class="QLabel" name="tr_label_sale_payment">
         <property name="geometry">
@@ -792,6 +677,19 @@
         </property>
         <property name="text">
          <string>Forma de pagamento</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="tr_button_sale">
+        <property name="geometry">
+         <rect>
+          <x>330</x>
+          <y>290</y>
+          <width>171</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Adicionar Venda</string>
         </property>
        </widget>
       </widget>
@@ -909,6 +807,259 @@
       </widget>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_products">
+     <attribute name="title">
+      <string>Produtos</string>
+     </attribute>
+     <widget class="QLabel" name="label_products_add">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>20</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Adicionar Produto</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_products_remove">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>20</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Remover Produto</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_vertical">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>60</y>
+        <width>20</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_products_add_name">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>51</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_products_add_name">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>100</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_products_add">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>160</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Adicionar </string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_products_remove">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>160</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remover</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_products_remove_name">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>100</y>
+        <width>51</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_products_remove_name">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>100</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="Line" name="line_horizontal">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>220</y>
+        <width>591</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_products_add_type">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>250</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Adicionar Tipo</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_products_remove_type">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>250</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Remover Tipo</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_products_add_type">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>370</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Adicionar </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_products_add_name_type">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>310</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_products_add_name_type">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>51</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_products_remove_name_type">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>300</y>
+        <width>51</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Nome</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_products_remove_type">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>360</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remover</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="input_products_remove_name_type">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>300</y>
+        <width>211</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -923,7 +1074,7 @@
   <tabstop>table_vision_clients</tabstop>
   <tabstop>input_products_add_name</tabstop>
   <tabstop>button_products_add</tabstop>
-  <tabstop>box_transact_type</tabstop>
+  <tabstop>box_transac_type</tabstop>
   <tabstop>main_tabs</tabstop>
   <tabstop>box_transac_client</tabstop>
   <tabstop>box_transac_product</tabstop>
@@ -945,7 +1096,6 @@
   <tabstop>tr_input_sale_pay_day</tabstop>
   <tabstop>tr_input_sale_quantity</tabstop>
   <tabstop>tr_box_sale_payment</tabstop>
-  <tabstop>pushButton_25</tabstop>
   <tabstop>tr_box_cost_type</tabstop>
   <tabstop>tr_input_cost_value</tabstop>
   <tabstop>tr_input_cost_description</tabstop>
