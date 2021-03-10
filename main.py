@@ -25,7 +25,6 @@ class MainWindow(QMainWindow):
         self.button_products_remove.clicked.connect(self.remove_productForms)
         self.button_products_remove_type.clicked.connect(self.remove_typeForms)
 
-
     def clientForms(self):
         if client_controller.insert_client((self.input_clients_name.text(), self.input_clients_phone.text(),
                              self.input_clients_address.text(), self.input_clients_company.text(),
@@ -112,7 +111,6 @@ class MainWindow(QMainWindow):
         self.box_transac_type.addItems(products_controller.get_types_list())
         self.tr_box_sale_type.clear()
         self.tr_box_sale_type.addItems(products_controller.get_types_list())
-
 
 
 

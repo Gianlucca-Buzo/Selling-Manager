@@ -37,29 +37,9 @@ class GroupDelegate(QtWidgets.QStyledItemDelegate):
             option.features |= QtWidgets.QStyleOptionViewItem.HasDecoration
             option.icon = self._minus_icon if is_open else self._plus_icon
 
-# class GroupView(QtWidgets.QTreeView):
-#     def __init__(self, model, parent=None):
-#         super(GroupView, self).__init__(parent)
-#         self.setIndentation(0)
-#         self.setExpandsOnDoubleClick(False)
-#         self.clicked.connect(self.on_clicked)
-#         delegate = GroupDelegate(self)
-#         self.setItemDelegateForColumn(0, delegate)
-#         self.setModel(model)
-#         self.header().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-#         self.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
-#         self.setStyleSheet("background-color: #0D1225;")
-#
-#     @QtCore.pyqtSlot(QtCore.QModelIndex)
-#     def on_clicked(self, index):
-#         if not index.parent().isValid() and index.column() == 0:
-#             self.setExpanded(index, not self.isExpanded(index))
-
-
 class GroupView(QtWidgets.QTreeView):
-    def __init__(self, parent=None):
+    def __init__(self, model, parent=None):
         super(GroupView, self).__init__(parent)
-        model = GroupModel()
         self.setIndentation(0)
         self.setExpandsOnDoubleClick(False)
         self.clicked.connect(self.on_clicked)
@@ -119,9 +99,10 @@ class GroupModel(QtGui.QStandardItemModel):
             group_item.setChild(j, i+1, item)
 
 
-class MainWindow(QtWidgets.QMainWindow):
+class OtherWindow(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
-        super(MainWindow, self).__init__(parent)
+        super(OtherWindow, self).__init__(parent)
+
         model = GroupModel(self)
         tree_view = GroupView(model)
         self.setCentralWidget(tree_view)
@@ -134,7 +115,7 @@ class MainWindow(QtWidgets.QMainWindow):
 if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    w = MainWindow()
+    w = OtherWindow()
     w.resize(720, 240)
     w.show()
     sys.exit(app.exec_())
