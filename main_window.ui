@@ -26,62 +26,6 @@
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="general_vision">
-     <attribute name="title">
-      <string>Visão Geral</string>
-     </attribute>
-     <widget class="QTableWidget" name="table_vision_clients">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>30</y>
-        <width>721</width>
-        <height>411</height>
-       </rect>
-      </property>
-      <attribute name="horizontalHeaderMinimumSectionSize">
-       <number>71</number>
-      </attribute>
-      <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>128</number>
-      </attribute>
-      <column>
-       <property name="text">
-        <string>Cliente</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>New Column</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Empresa</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Preço de Compra</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Preço de Venda</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QTreeView" name="treeView">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>150</y>
-        <width>256</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
     <widget class="QWidget" name="tab_clients">
      <attribute name="title">
       <string>Clientes</string>
@@ -212,6 +156,19 @@
       </property>
       <property name="text">
        <string>Adicionar Cliente</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_clients_table">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>150</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Tabela de Clientes</string>
       </property>
      </widget>
     </widget>
@@ -1107,7 +1064,6 @@
   <tabstop>input_clients_company</tabstop>
   <tabstop>input_clients_email</tabstop>
   <tabstop>button_clients_add</tabstop>
-  <tabstop>table_vision_clients</tabstop>
   <tabstop>input_products_add_name</tabstop>
   <tabstop>button_products_add</tabstop>
   <tabstop>box_transac_type</tabstop>

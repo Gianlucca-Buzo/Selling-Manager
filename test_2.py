@@ -1,18 +1,10 @@
-#
-# from os.path import expanduser
-# from PyQt5.QtWidgets import *
-#
-# home_directory = expanduser('~')
-#
-# app = QApplication([])
-# model = QDirModel()
-# view = QTreeView()
-# view.setModel(model)
-# view.setRootIndex(model.index(home_directory))
-# view.show()
-# app.exec_()
-
 from PyQt5 import QtCore, QtGui, QtWidgets
+from database import client_controller,cost_controller,products_controller,transaction_controller,trip_controller
+import json
+
+
+data_client = client_controller.get_clients_data_set()
+
 
 datas = {
     "Category 1": [
@@ -60,7 +52,7 @@ class GroupModel(QtGui.QStandardItemModel):
     def __init__(self, parent=None):
         super(GroupModel, self).__init__(parent)
         self.setColumnCount(8)
-        self.setHorizontalHeaderLabels(["", "Name", "Library", "Release Date", "Genre(s)", "Last Played", "Time Played", ""])
+        self.setHorizontalHeaderLabels(["","Nome", "Id Transação", "Produto", "Valor Compra", "Valor Venda", "Data", "Quantidade", "Método Pagamento","Id Cliente","Id Viagem","Tipo",""])
         for i in range(self.columnCount()):
             it = self.horizontalHeaderItem(i)
             it.setForeground(QtGui.QColor("#F2F2F2"))
@@ -107,7 +99,7 @@ class OtherWindow(QtWidgets.QMainWindow):
         tree_view = GroupView(model)
         self.setCentralWidget(tree_view)
 
-        for group, childrens in datas.items():
+        for group, childrens in data_client.items():
             group_item = model.add_group(group)
             for children in childrens:
                 model.append_element_to_group(group_item, children)

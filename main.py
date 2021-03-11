@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
 from datetime import date
 from PyQt5.uic import loadUi
 import sys
+from test_2 import OtherWindow
 from database import client_controller,cost_controller,transaction_controller,trip_controller,products_controller
 
 
@@ -24,6 +25,7 @@ class MainWindow(QMainWindow):
         self.button_products_add_type.clicked.connect(self.add_typeForms)
         self.button_products_remove.clicked.connect(self.remove_productForms)
         self.button_products_remove_type.clicked.connect(self.remove_typeForms)
+        self.button_clients_table.clicked.connect(self.show_client_table)
 
     def clientForms(self):
         if client_controller.insert_client((self.input_clients_name.text(), self.input_clients_phone.text(),
@@ -48,7 +50,7 @@ class MainWindow(QMainWindow):
                               [self.box_transac_product.currentText(), float(self.input_transac_purchase.text()),
                                float(self.input_transac_sale.text()), sale_date.__str__(),
                                int(self.input_transac_quantity.text()), self.box_transac_payment.currentText(),
-                               self.box_transact_type.currentText()], 0)
+                               self.box_transac_type.currentText()], 0)
 
     def saleForms(self):
         sale_date = self.tr_input_sale_pay_day.text().split("/")
@@ -155,6 +157,12 @@ class MainWindow(QMainWindow):
             self.display_success_alert("Custo adicionado à viagem!")
         else:
             self.display_error_alert("Não é possível adicionar um custo sem uma viagem inicializada")
+
+    def show_client_table(self):
+        # transaction_controller.get_transaction_list('Enrico')
+        self.window = OtherWindow()
+        self.window.resize(800,500)
+        self.window.show()
 
 class NewDialog(QDialog):
     def __init__(self):
